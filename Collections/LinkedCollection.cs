@@ -20,9 +20,9 @@ namespace Collections
         }
         private LinkedNode first;
         private int SIZE;
-        public LinkedCollection() {
-        
-        
+        public LinkedCollection(int cap) {
+            data = new object[cap];
+            this.cap = cap;
         }
         public void Add(object e)
         {
@@ -63,11 +63,12 @@ namespace Collections
                     SIZE--; return;
                 }
                 node = node.next;
+            }
         }
-
-        public int size()
-        {
-           return SIZE;
+            public int size()
+            {
+                return SIZE;
+            }
         }
-    }
+    
 }

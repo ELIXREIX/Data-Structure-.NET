@@ -13,7 +13,7 @@ namespace CW
 {
     public partial class Form1 : Form
     {
-        Collection x = new ArrayCollection(5);
+        Collection x = new LinkedCollection(5);
         public Form1()
         {
             InitializeComponent();
