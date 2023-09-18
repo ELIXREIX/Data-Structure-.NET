@@ -8,8 +8,8 @@ namespace Collections
 { 
     public class LinkdedCollectionHeader : Collection
     {
-    private class LinkedNode
-    {
+        private class LinkedNode
+        {
         public object e;
         public LinkedNode next;
         public LinkedNode(object e, LinkedNode next)
@@ -18,23 +18,23 @@ namespace Collections
             this.next = next;
         }
     }
-    private LinkedNode first = new LinkedNode(null, null);
-    private int SIZE;
-    public void Add(object e)
+        private LinkedNode first = new LinkedNode(null, null);
+        private int SIZE;
+        public void Add(object e)
     {
         first.next = new LinkedNode(e, first.next);
         SIZE++;
     }
 
-    public bool Contains(object e)
-    {
-        LinkedNode node = first.next;
-        while (node != null)
+        public bool Contains(object e)
         {
-            if (node.e.Equals(e)) return true;
-            node = node.next;
-        }
-        return false;
+            LinkedNode node = first.next;
+            while (node != null)
+            {
+                if (node.e.Equals(e)) return true;
+                node = node.next;
+            }
+            return false;
 
     }
 

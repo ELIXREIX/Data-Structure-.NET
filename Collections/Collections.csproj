@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayCollection.cs" />
+    <Compile Include="LinkedCollectionHeader.cs" />
     <Compile Include="LinkedCollection.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
