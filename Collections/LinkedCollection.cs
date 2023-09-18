@@ -32,7 +32,13 @@ namespace Collections
 
         public bool Contains(object e)
         {
-            throw new NotImplementedException();
+            LinkedNode node = first;
+            while (node != null)
+            {
+                if (node.e.Equals(e)) return true;//nodeมีค่าเดียวกับobjectไหม?
+                node = node.next;
+            }
+            return false;
         }
 
         public bool isEmpty()
@@ -42,7 +48,21 @@ namespace Collections
 
         public void remove(object e)
         {
-            throw new NotImplementedException();
+            if (first == null) return;
+            if (first.e.Equals(e))
+            {
+                first = first.next;
+                SIZE--; return;
+            }
+            LinkedNode node = first;
+            while (node != null)
+            {
+                if (node.next != null && node.next.e.Equals(e))
+                {
+                    node.next = node.next.next;
+                    SIZE--; return;
+                }
+                node = node.next;
         }
 
         public int size()
