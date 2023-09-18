@@ -20,10 +20,6 @@ namespace Collections
         }
         private LinkedNode first;
         private int SIZE;
-        public LinkedCollection(int cap) {
-            data = new object[cap];
-            this.cap = cap;
-        }
         public void Add(object e)
         {
             first = new LinkedNode(e, first);
