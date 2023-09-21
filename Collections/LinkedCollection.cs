@@ -32,7 +32,13 @@ namespace Collections
 
         public bool Contains(object e)
         {
-            throw new NotImplementedException();
+            LinkedNode node = first;
+            while (node != null)
+            {
+                if (node.e.Equals(e)) return true;
+                node = node.next;
+            }
+            return false;
         }
 
         public bool isEmpty()

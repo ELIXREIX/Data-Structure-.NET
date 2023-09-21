@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayCollection.cs" />
+    <Compile Include="Arrayset.cs" />
+    <Compile Include="Set.cs" />
     <Compile Include="LinkedCollection.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
