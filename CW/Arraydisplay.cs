@@ -39,17 +39,44 @@ namespace CW
             x.Add(textBox1.Text);
             UpdateCountLabel();
             textBox1.Clear();
-            MessageBox.Show("The text was add in the collection."); x
+            MessageBox.Show("The text was add in the collection.");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string searchText = textBox1.Text;
+            bool textExists = x.Contains(searchText);
+            textBox1.Clear();
+            if (textExists)
+            {
+                MessageBox.Show("The text exists in the collection.");
+            }
+            else
+            {
+                MessageBox.Show("The text does not exist in the collection.");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            string textToDelete = textBox1.Text;
+            bool textExists = x.Contains(textToDelete);
+            textBox1.Clear();
+            if (textExists)
+            {
+                x.remove(textToDelete);
+                UpdateCountLabel();
+                MessageBox.Show("The text has been removed from the collection.");
+            }
+            else
+            {
+                MessageBox.Show("The text was not found in the collection.");
+            }
         }
-    }
+        private void UpdateCountLabel()
+        {
+            label1.Text = "Contains: " + x.size();
+        }
+    
+}
 }

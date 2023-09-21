@@ -84,7 +84,8 @@ namespace Collections
 
         public void Add(object e)
         {
-            throw new NotImplementedException();
+            ensureCapacity();
+            data[SIZE++] = e;
         }
     }
 }
