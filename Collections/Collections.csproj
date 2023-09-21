@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="ArrayCollection.cs" />
     <Compile Include="Arrayset.cs" />
-    <Compile Include="Interface1.cs" />
+    <Compile Include="List.cs" />
     <Compile Include="LinkedSet.cs" />
     <Compile Include="Set.cs" />
     <Compile Include="LinkedCollectionHeader.cs" />
