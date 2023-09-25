@@ -47,12 +47,43 @@ namespace CW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int indextoadd = int.Parse(textBox2.Text);
-            x.Add(textBox1.Text);
+            string textToAdd = textBox1.Text;
+            int indexToAdd = -1; // Initialize to -1 as a sentinel value to indicate no specific index was provided.
+
+            if (!string.IsNullOrEmpty(textBox2.Text)) // Check if textBox2 has a value
+            {
+                if (int.TryParse(textBox2.Text, out indexToAdd)) // Try to parse the index
+                {
+                    if (indexToAdd < 0 || indexToAdd > x.size()) // Check if the index is out of range
+                    {
+                        MessageBox.Show("Index is out of range.");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid index. Please enter a valid number.");
+                    return;
+                }
+            }
+
+            if (indexToAdd == -1) // If no index was specified, add to the end of the collection
+            {
+                x.Add(textToAdd);
+                MessageBox.Show("The text was added to the end of the collection.");
+            }
+            else // If an index was specified, add at that index
+            {
+                x.add(indexToAdd, textToAdd);
+                MessageBox.Show("The text has been added at index " + indexToAdd + " in the collection.");
+            }
+
             UpdateCountLabel();
             textBox1.Clear();
-            MessageBox.Show("The text was add in the collection.");
+            textBox2.Clear();
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {

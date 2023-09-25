@@ -16,5 +16,6 @@ namespace Collections
         object get(int i);
         void set(int index, object e);
         void remove(int index);
+        void add(int index, object e);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Collections
 {
-    public class ArrayCollection : Collection 
+    public class ArrayCollection : Collection
     {
         private int cap, SIZE; //Default Constructor
         private object[] data; //Default Constructor
@@ -75,6 +75,11 @@ namespace Collections
         }
 
         public void remove(int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void add(int index, object e)
         {
             throw new NotImplementedException();
         }

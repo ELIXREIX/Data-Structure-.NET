@@ -82,5 +82,10 @@ namespace Collections
         {
             throw new NotImplementedException();
         }
+
+        public void add(int index, object e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
