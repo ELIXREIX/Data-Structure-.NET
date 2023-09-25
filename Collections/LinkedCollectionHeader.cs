@@ -77,5 +77,10 @@ namespace Collections
         {
             throw new NotImplementedException();
         }
+
+        public void remove(int index)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

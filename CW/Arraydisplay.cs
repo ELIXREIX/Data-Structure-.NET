@@ -47,6 +47,7 @@ namespace CW
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int indextoadd = int.Parse(textBox2.Text);
             x.Add(textBox1.Text);
             UpdateCountLabel();
             textBox1.Clear();
@@ -71,11 +72,24 @@ namespace CW
         private void button3_Click(object sender, EventArgs e)
         {
             string textToDelete = textBox1.Text;
-            bool textExists = x.Contains(textToDelete);
-            textBox1.Clear();
-            if (textExists)
+            int indexToDelete;
+
+            if (int.TryParse(textBox2.Text, out indexToDelete)) // Try to parse the index
             {
-                x.remove(textToDelete);
+                if (indexToDelete >= 0 && indexToDelete < x.size()) // Check if the index is valid
+                {
+                    x.remove(indexToDelete); // Remove by index
+                    UpdateCountLabel();
+                    MessageBox.Show("The text at index " + indexToDelete + " has been removed from the collection.");
+                }
+                else
+                {
+                    MessageBox.Show("Index is out of range.");
+                }
+            }
+            else if (x.Contains(textToDelete)) // Check if text exists
+            {
+                x.remove(textToDelete); // Remove by text
                 UpdateCountLabel();
                 MessageBox.Show("The text has been removed from the collection.");
             }
@@ -83,7 +97,11 @@ namespace CW
             {
                 MessageBox.Show("The text was not found in the collection.");
             }
+
+            textBox1.Clear();
+            textBox2.Clear();
         }
+
         private void UpdateCountLabel()
         {
             label1.Text = "Contains: " + x.size();

@@ -15,5 +15,6 @@ namespace Collections
         bool isEmpty();
         object get(int i);
         void set(int index, object e);
+        void remove(int index);
     }
 }
