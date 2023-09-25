@@ -62,5 +62,20 @@ namespace Collections
         {
             return SIZE;
         }
+
+        public object get(int i)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void set(int indexToRewrite, string newMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void set(int index, object e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

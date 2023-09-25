@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using Collections;
+using System;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Collections;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CW
 {
     public partial class Arraydisplay : Form
     {
-        Collection x = new ArrayList(5);
+        Collection x = new Arraylist(5);
         public Arraydisplay()
         {
             InitializeComponent();
@@ -31,7 +26,23 @@ namespace CW
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int indexToSearch = int.Parse(textBox2.Text); // Parse the index from textBox4
+                if (indexToSearch >= 0 && indexToSearch < x.size())
+                {
+                    object message = x.get(indexToSearch); // Get the message at the specified index
+                    textBox3.Text = message.ToString(); // Display the message in textBox5
+                }
+                else
+                {
+                    textBox3.Text = "Index is out of range.";
+                }
+            }
+            catch (FormatException)
+            {
+                textBox3.Text = "Invalid index. Please enter a valid number.";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +88,49 @@ namespace CW
         {
             label1.Text = "Contains: " + x.size();
         }
-    
-}
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = int.Parse(textBox2.Text); 
+                if (index >= 0 && index < x.size())
+                {
+                    object ea = x.get(index);
+                    string newText = textBox3.Text;
+                    ea = newText;
+                    x.set(index, ea); // Set the new text at the specified index
+                    UpdateCountLabel(); // Update the count label
+                    MessageBox.Show("The text at index " + index + " has been updated.");
+                }
+                else
+                {
+                    MessageBox.Show("Index is out of range.");
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid index or new text. Please enter valid values.");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            StringBuilder allObjects = new StringBuilder();
+
+            // Iterate through the collection and add all objects to the result
+            for (int i = 0; i < x.size(); i++)
+            {
+                object obj = x.get(i);
+                allObjects.AppendLine(obj.ToString()); // Add object to the result
+            }
+
+            textBox4.Text = allObjects.ToString(); // Display all objects in textBox8
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

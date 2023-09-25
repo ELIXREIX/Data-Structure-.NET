@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Collections
 {
@@ -63,5 +59,19 @@ namespace Collections
             return SIZE;
         }
 
+        public object get(int i)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void set(int indexToRewrite, string newMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void set(int index, object e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

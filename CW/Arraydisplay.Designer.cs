@@ -40,8 +40,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -103,7 +101,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(190, 23);
             this.button5.TabIndex = 6;
-            this.button5.Text = "button5";
+            this.button5.Text = "ค้นหาจากลำดับ";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -120,61 +118,44 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
+            this.button6.Text = "แก้ไข";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(30, 177);
+            this.textBox4.Location = new System.Drawing.Point(30, 139);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(580, 230);
+            this.textBox4.Size = new System.Drawing.Size(580, 268);
             this.textBox4.TabIndex = 9;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(636, 177);
+            this.button7.Location = new System.Drawing.Point(636, 139);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(152, 131);
             this.button7.TabIndex = 10;
-            this.button7.Text = "button7";
+            this.button7.Text = "แสดงรายชื่อ";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(636, 390);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(347, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "label3";
+            this.label1.Text = "Contains: 0";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Arraydisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox4);
@@ -209,7 +190,5 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

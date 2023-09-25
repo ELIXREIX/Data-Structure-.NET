@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Collections
 {
-    public class ArrayList : List
+    public class Arraylist : List
 
     {
         private int cap, SIZE; //Default Constructor
         private object[] data; //Default Constructor
-        public ArrayList(int cap) {
+        public Arraylist(int cap) {
             data = new object[cap];
             this.cap = cap;
         }
@@ -25,14 +26,7 @@ namespace Collections
                 data = tempdata;
             }
         }
-        public object get(int index)
-        {
-            return data[index];
-        }
-        public void set(int index,object e)
-        {
-            data[index] = e;
-        }
+
         public void add(int index, object e)
         {
             ensureCapacity();
@@ -65,7 +59,7 @@ namespace Collections
         {
             return indexOf(e) != -1;
         }
-        private int indexOf(object e)
+        public int indexOf(object e)
         {
             for (int i = 0; i < SIZE; i++)
                 if (data[i].Equals(e))
@@ -86,6 +80,16 @@ namespace Collections
         {
             ensureCapacity();
             data[SIZE++] = e;
+        }
+
+        public object get(int index)
+        {
+            return data[index];
+        }
+
+        public void set(int index, object e)
+        {
+            data[index] = e;
         }
     }
 }

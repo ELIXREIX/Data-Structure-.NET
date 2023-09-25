@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayCollection.cs" />
-    <Compile Include="ArrayList.cs" />
+    <Compile Include="Arraylist.cs" />
     <Compile Include="Arrayset.cs" />
     <Compile Include="List.cs" />
     <Compile Include="LinkedSet.cs" />

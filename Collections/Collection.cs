@@ -13,7 +13,7 @@ namespace Collections
         bool Contains(object e);
         int size();
         bool isEmpty();
-
-
+        object get(int i);
+        void set(int index, object e);
     }
 }
