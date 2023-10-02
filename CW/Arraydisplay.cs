@@ -8,7 +8,7 @@ namespace CW
 {
     public partial class Arraydisplay : Form
     {
-        Collection x = new Arraylist(5);
+        Collection x = new SinglyLinkedList();
         public Arraydisplay()
         {
             InitializeComponent();
@@ -69,7 +69,7 @@ namespace CW
 
             if (indexToAdd == -1) // If no index was specified, add to the end of the collection
             {
-                x.Add(textToAdd);
+                x.add(textToAdd);
                 MessageBox.Show("The text was added to the end of the collection.");
             }
             else // If an index was specified, add at that index
@@ -80,7 +80,7 @@ namespace CW
 
             UpdateCountLabel();
             textBox1.Clear();
-            textBox2.Clear();
+
         }
 
 

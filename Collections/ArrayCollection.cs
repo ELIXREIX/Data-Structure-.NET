@@ -21,7 +21,7 @@ namespace Collections
                 data = tempdata;
             }
         }
-        public void Add(object e)
+        public void add(object e)
         {
             ensureCapacity();
             data[SIZE++] = e;

@@ -8,7 +8,7 @@ namespace Collections
 {
     public interface Collection
     {
-        void Add(object e);
+        void add(object e);
         void remove (object e);
         bool Contains(object e);
         int size();

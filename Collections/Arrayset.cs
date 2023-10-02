@@ -9,10 +9,10 @@ namespace Collections
     public class Arrayset : ArrayCollection, Set
     {
         public Arrayset(int cap) : base(cap) { }
-        public new void Add(object e)
+        public new void add(object e)
         {
             if (!base.Contains(e))
-                base.Add(e);
+                base.add(e);
         }
     }
 }

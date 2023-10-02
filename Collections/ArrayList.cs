@@ -76,7 +76,7 @@ namespace Collections
             throw new NotImplementedException();
         }
 
-        public void Add(object e)
+        public void add(object e)
         {
             ensureCapacity();
             data[SIZE++] = e;

@@ -8,10 +8,10 @@ namespace Collections
 {
     public class LinkedSet : LinkedCollectionHeader, Set
     {
-        public new void Add(object e)
+        public new void add(object e)
         {
             if (!base.Contains(e))
-                base.Add(e);
+                base.add(e);
         }
     }
 

@@ -21,7 +21,7 @@ namespace Collections
         }
         private LinkedNode first = new LinkedNode(null, null);
         private int SIZE;
-        public void Add(object e)
+        public void add(object e)
         {
             first.next = new LinkedNode(e, first.next);
             SIZE++;
