@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tree;
 
-namespace CW
+namespace Pacman
 {
     internal static class Program
     {
@@ -17,7 +16,7 @@ namespace CW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Arraydisplay());
+            Application.Run(new Form1());
         }
     }
 }
