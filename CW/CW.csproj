@@ -85,10 +85,6 @@
       <Project>{54d118f6-1806-4e6d-9f7a-0a9787259595}</Project>
       <Name>Collections</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tree\Tree.csproj">
-      <Project>{6050dbe8-6cbe-4ce7-a96e-c3ff70578da9}</Project>
-      <Name>Tree</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

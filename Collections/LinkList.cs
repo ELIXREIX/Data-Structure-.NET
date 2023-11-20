@@ -8,67 +8,33 @@ using System.Xml;
 
 namespace Collections
 {
-    public class LinkList<T> : List
+    public class LinkList : List
 
     {
-        private LinkedNode first = new LinkedNode(default(T), null, null);
-        private int SIZE;
         public LinkList()
         {
             first.back = first.next = first;
         }
+        private LinkedNode first = new LinkedNode(null, null, null);
+        private int SIZE;
         private class LinkedNode
         {
-            public T e;
+            public object e;
             public LinkedNode next;
             public LinkedNode back;
-
-            public LinkedNode(T e, LinkedNode back, LinkedNode next)
+            public LinkedNode(object e, LinkedNode back, LinkedNode next)
             {
                 this.e = e;
                 this.back = back;
                 this.next = next;
             }
         }
-
-        public T this[int index]
-        {
-            get
-            {
-                if (index < 0 || index >= SIZE)
-                {
-                    throw new IndexOutOfRangeException("Index is out of range");
-                }
-
-                return nodeAt(index).e;
-            }
-            set
-            {
-                if (index < 0 || index >= SIZE)
-                {
-                    throw new IndexOutOfRangeException("Index is out of range");
-                }
-
-                nodeAt(index).e = value;
-            }
-        }
-
-        private void addBefore(LinkedNode node, T e)
+        private void addBefore(LinkedNode node, object e)
         {
             LinkedNode newNode = new LinkedNode(e, node.back, node);
             node.back.next = newNode;
             node.back = newNode;
             SIZE++;
-        }
-
-        public void add(int index, T e)
-        {
-            addBefore(nodeAt(index), e);
-        }
-
-        public void add(T e)
-        {
-            addBefore(first, e);
         }
         private void removeNode(LinkedNode node)
         {
@@ -84,6 +50,15 @@ namespace Collections
             for (int i = -1; i < index; i++)
                 node = node.next;
             return node;
+        }
+        public void add(int index, object e)
+        {
+            addBefore(nodeAt(index), e);
+        }
+
+        public void add(object e)
+        {
+            addBefore(first, e);
         }
 
         public bool Contains(object e)
@@ -132,7 +107,7 @@ namespace Collections
             }   
         }
 
-        public void set(int index, T e)
+        public void set(int index, object e)
         {
             nodeAt(index).e = e;
         }
@@ -140,21 +115,6 @@ namespace Collections
         public int size()
         {
             return SIZE;
-        }
-
-        public void add(int index, object e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void add(object e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void set(int index, object e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

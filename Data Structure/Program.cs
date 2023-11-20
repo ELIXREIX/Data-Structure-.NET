@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Queue
+namespace Data_Structure
 {
-    public interface PriorityQueue : Queuecs
+    internal class Program
     {
+        static void Main(string[] args)
+        {
 
+        }
     }
 }
